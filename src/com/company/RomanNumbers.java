@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RomanNumbers {
-    static List<String> listNumbers = new ArrayList<>();
+    static List<String> listNumbers = new ArrayList<>(100);
     static {
         listNumbers.add("0");
         try {
