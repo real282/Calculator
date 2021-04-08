@@ -12,7 +12,7 @@ public class Main {
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             String strLine = "";
-            String[] arrayInpatData = new String[3];
+            String[] arrayInputData = new String[3];
             while (true) {
                 strLine = bufferedReader.readLine();
                 strLine = strLine.replaceAll("\\s", "");
@@ -23,14 +23,14 @@ public class Main {
                     throw new InvalidInputDataExeption("Invalid input math operation");
                 }
 
-                arrayInpatData[0] = strLine.substring(0, matcher.end() - 1);
-                arrayInpatData[1] = strLine.substring(matcher.end() - 1, matcher.end());
-                arrayInpatData[2] = strLine.substring(matcher.end());
+                arrayInputData[0] = strLine.substring(0, matcher.end() - 1);
+                arrayInputData[1] = strLine.substring(matcher.end() - 1, matcher.end());
+                arrayInputData[2] = strLine.substring(matcher.end());
 
-                if (RomanNumbers.testCorrectRome(arrayInpatData[0]) ^ RomanNumbers.testCorrectRome(arrayInpatData[2]))
+                if (RomanNumbers.testCorrectRome(arrayInputData[0]) ^ RomanNumbers.testCorrectRome(arrayInputData[2]))
                     throw new InvalidInputDataExeption("Invalid input");
 
-                MathAction.action(arrayInpatData);
+                MathAction.action(arrayInputData);
 
             }
         }
